@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 const ProductCard = ({product, onRemoveFromCart}) => {
 
     return (
-        <Card >
+        <Card className='product-card'>
             <div>{product.title}</div>
             <Button onClick={() => onRemoveFromCart(product.id)} color="secondary">
                 Remove from Cart

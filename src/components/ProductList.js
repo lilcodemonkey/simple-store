@@ -3,6 +3,7 @@ import { Grid2, Button} from '@mui/material';
 import { useCart } from '../context/CartContext';
 import ProductCard from './ProductCard'
 import ProductRegisterForm from './ProductRegisterForm'
+import './ProductList.css'
 
 const ProductList = () => {
 
@@ -22,6 +23,7 @@ const ProductList = () => {
   }, []);
 
   return (
+    <div className="shop-container">
     <Grid2 container spacing={2}>
       {cart.map((product) => (
         <Grid2 item xs={12} sm={6} md={4} key={product.id}>
@@ -30,8 +32,10 @@ const ProductList = () => {
      
         </Grid2>
       ))}
-      <ProductRegisterForm addToCart={addToCart}/>
+
     </Grid2>
+          <ProductRegisterForm addToCart={addToCart}/>
+          </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ProductRegisterForm.css'; 
 
 const ProductRegisterForm = ({ addToCart }) => {
   const [productTitle, setProductTitle] = useState(''); 
@@ -14,18 +15,20 @@ const ProductRegisterForm = ({ addToCart }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input
-          type="text"
-          value={productTitle}
-          onChange={handleChange} 
-        />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
-  );
+    <div className="form-container">
+        <form onSubmit={handleSubmit}>
+        <label>
+            Title:
+            <input
+            type="text"
+            value={productTitle}
+            onChange={handleChange} 
+            />
+        </label>
+        <input type="submit" value="Submit" />
+        </form>
+  </div>)
+    
 };
 
 export default ProductRegisterForm;
